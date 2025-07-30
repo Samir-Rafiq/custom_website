@@ -1,23 +1,104 @@
 .header {
-   width: 100vw;
-   max-width: 100%;
+   width: 100%;
    background-color: var(--color-black);
-   padding: 20px;
+   padding: 20px 0;
+   position: sticky;
+   top: 0;
+   z-index: 100;
 
    &__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
 
-      .nav_bar ul {
-         display: flex;
-         gap: 20px;
+      .logo {
+         height: 40px;
+         width: auto;
+      }
+   }
+}
 
-         li {
-            a {
-               color: var(--color-white);
+.nav_bar {
+   display: flex;
+   align-items: center;
+   gap: 30px;
+
+   ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+         a {
+            color: var(--color-white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 8px 0;
+
+            &:hover {
+               color: var(--color-primary, #ff6b35);
             }
          }
+      }
+   }
+
+   .header-button {
+      background-color: var(--color-primary, #ff6b35);
+      color: var(--color-white);
+      padding: 12px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+
+      &:hover {
+         background-color: var(--color-primary-dark, #e55a2b);
+         transform: translateY(-2px);
+      }
+   }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+   .header {
+      &__container {
+         padding: 0 15px;
+
+         .logo {
+            height: 35px;
+         }
+      }
+   }
+
+   .nav_bar {
+      gap: 20px;
+
+      ul {
+         gap: 20px;
+
+         li a {
+            font-size: 14px;
+         }
+      }
+
+      .header-button {
+         padding: 10px 16px;
+         font-size: 14px;
+      }
+   }
+}
+
+@media (max-width: 480px) {
+   .nav_bar {
+      ul {
+         display: none; // Consider implementing mobile menu
       }
    }
 }
