@@ -1,0 +1,23 @@
+.header {
+   width: 100vw;
+   max-width: 100%;
+   background-color: var(--color-black);
+   padding: 20px;
+
+   &__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .nav_bar ul {
+         display: flex;
+         gap: 20px;
+
+         li {
+            a {
+               color: var(--color-white);
+            }
+         }
+      }
+   }
+}
